@@ -40,8 +40,8 @@ class User():
         if pwd is None or type(pwd) is not str:
             self.__password = None
         else:
+            # self.__password was missing a '_'
             self.__password = hashlib.md5(pwd.encode()).hexdigest().lower()
-            # SOLUTION: CHANGE ._ TO .__
 
     def is_valid_password(self, pwd):
         """
@@ -55,8 +55,8 @@ class User():
             return False
         if self.__password is None:
             return False
+        # upper() not needed
         return hashlib.md5(pwd.encode()).hexdigest() == self.password
-        # SOLTUION: REMOVE .UPPER() ON HASH; CAPITALIZATION MISMATCHED PWD
 
 if __name__ == '__main__':
     print("Test User")
