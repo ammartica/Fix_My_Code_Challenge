@@ -4,11 +4,13 @@
 
 class Square():
     """Square object"""
-    width = 0
-    height = 0
+    width = 1
+    height = 1
 
     def __init__(self, *args, **kwargs):
         """ Initializes Square """
+        """self.width = 1
+        self.height = 1"""
         for key, value in kwargs.items():
             if value > 0:
                 setattr(self, key, value)
