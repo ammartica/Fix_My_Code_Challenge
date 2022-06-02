@@ -10,7 +10,7 @@ class Square():
     def __init__(self, *args, **kwargs):
         """ Initializes Square """
         for key, value in kwargs.items():
-            if value > 0:
+            if value > 0 and value == key:
                 setattr(self, key, value)
 
     def area_of_my_square(self):
@@ -27,7 +27,8 @@ class Square():
 
 
 if __name__ == "__main__":
-    s = Square(width=12, height=12)
+
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
