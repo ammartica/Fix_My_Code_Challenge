@@ -4,14 +4,13 @@
 
 class Square():
     """Square object"""
+    width = 0
+    height = 0
 
     def __init__(self, *args, **kwargs):
-        """ Initializes Square """
-        self.width = 1
-        self.height = 1
+        """ Initializes Square object by setting values"""
         for key, value in kwargs.items():
-            if value > 0:
-                setattr(self, key, value)
+            setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -19,7 +18,7 @@ class Square():
 
     def PermiterOfMySquare(self):
         """ Returns perimeter of Square object """
-        return 2 * (self.width + self.height)
+        return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
         """ String representation of Square object """
@@ -27,8 +26,8 @@ class Square():
 
 
 if __name__ == "__main__":
-
-    s = Square(width=9, height=9)
+    """ creates a Square object and calls methods """
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
